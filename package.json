@@ -11,5 +11,15 @@
     "puppeteer": "^21.7.0",
     "uuid": "^9.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fatin1st/fatin_ca.git"
+  },
+  "author": "Md. Fatin Hasnat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fatin1st/fatin_ca/issues"
+  },
+  "homepage": "https://github.com/Fatin1st/fatin_ca#readme"
 }
