@@ -8,6 +8,7 @@ To install the fatin_ca module, use the following command:
 
 ```bash
 npm install fatin_ca
+npx fatin_ca init
 ```
 
 ## Usage
@@ -58,7 +59,7 @@ Starts or continues an existing chat thread for the specified user.
 - `userMessage` (String): Message to send in the chat.
 - `characterId` (String): Unique identifier for the character.
 
-### `createNewChat(userId)`
+### `deleteChat(userId)`
 
 Deletes chat thread for the specified user.
 
@@ -67,10 +68,12 @@ Deletes chat thread for the specified user.
 ## Note
 
 This module is designed for mass usage and can efficiently handle unlimited users. It simplifies the interaction with CharacterAI for creating and managing chat threads in Node.js applications.
+
 ## 🚀 About Me
+
 I'm Fatin Hasnat, a 15-year-old talented and ambitious Cyber Security Expert, Full-stack Next.js Developer and Python Developer. Always open for new ideas!
 
-
 ## 🔗 Links
+
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://fatinhasnat.com/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fatin-hasnat-370843269/)

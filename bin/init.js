@@ -1,4 +1,7 @@
-// init.js
+#!/usr/bin/env node
+
+const { execSync } = require("child_process");
+
 const reset = "\x1b[0m";
 const bright = "\x1b[1m";
 const cyan = "\x1b[36m";
