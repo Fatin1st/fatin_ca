@@ -1,17 +1,19 @@
 {
   "name": "fatin_ca",
-  "version": "1.0.0",
-  "description": "Module for CharacterAI chat",
+  "version": "1.0.3",
+  "description": "Mass CharacterAI Chat Module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "postinstall": "",
+    "start": "node index.js",
+    "init": "node init.js"
   },
   "dependencies": {
+    "chalk": "^5.3.0",
     "node_characterai": "^1.2.1",
     "puppeteer": "^21.7.0",
     "uuid": "^9.0.1"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fatin1st/fatin_ca.git"
