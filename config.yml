@@ -1,1 +1,43 @@
-theme: jekyll-theme-THEME-NAME
+theme: jekyll-theme-cayman
+
+text_color_theme: default #eg: default | dark | forest | ocean | chocolate | orange
+## Base settings ##
+
+title: fatin_ca | Character AI Unofficial API for Mass Usage by Md. Fatin Hasnat
+description: > #this means to ignore newlines until "nav_lists:"
+  Character AI Unofficial API for Mass Usage by Md. Fatin Hasnat
+
+
+paths:
+  base: /
+  home: https://github.com/Fatin1st/fatin_ca
+  # all:  /all.html
+  # rss:  /feed.xml
+
+## GitHub repository (if the site is hosted by GitHub) ##
+repository: Fatin1st/fatin_ca
+repository_tree: main
+
+## Language & timezone ##
+lang: en #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
+
+## Author & social ##
+author:
+  name: Md. Fatin Hasnat
+  email: fatinhasnat.27sep2000@gmail.com  #your Email address e.g. someone@site.com
+  github: Fatin1st  #your GitHub username
+  linkedin: Fatin Hasnat  #your Linkedin username
+
+## Comment system (gitalk) ##
+# please refer to https://github.com/gitalk/gitalk for more info.
+gitalk:
+  clientID: Iv1.ab4bd37ef1443d27 #Github Application Client ID
+  clientSecret: a0cc0172eb8d2f3739ff2373c4e5427aa08d957a #Github Application Client Secret
+  repository: fatin_ca #Github repo
+  owner: Fatin1st #Github repo owner
+  admin:  #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
+    - Fatin1st
+    - TheCaptainCodes
+
+## Google Analytics ##
+ga_tracking_id:  G-7QCLQPL973
