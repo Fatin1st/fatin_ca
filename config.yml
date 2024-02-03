@@ -6,8 +6,8 @@ text_color_theme: default #eg: default | dark | forest | ocean | chocolate | ora
 ## Base settings ##
 
 title: fatin_ca | Character AI Unofficial API for Mass Usage by Md. Fatin Hasnat
-description: > #this means to ignore newlines until "nav_lists:"
-  Character AI Unofficial API for Mass Usage by Md. Fatin Hasnat
+description: Character AI Unofficial API for Mass Usage by Md. Fatin Hasnat
+keywords: fatin_ca, ca, fatin, fatin hasnat,hasnat, character ai, character ai api, Fatin_CA, Character AI, Unofficial API, Mass Usage, Chat Module, Node.js, Puppeteer, Conversational AI, Chatbot Integration, Md. Fatin Hasnat, Node CharacterAI, OpenAI, Unofficial Client, Natural Language Processing, Interactive Chat
 
 
 paths:
