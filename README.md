@@ -1,6 +1,7 @@
-# fatin_ca - Character AI Unofficial API
+# fatin_ca - Character AI Unofficial API for Mass Usage
+## https://github.com/Fatin1st/fatin_ca
 
-fatin_ca is a Node.js module inspired by the `node_characterai` module, designed to provide a simplified interface for creating and managing chat threads with CharacterAI. One of its key features is the ability to handle mass usage and support unlimited users seamlessly.
+fatin_ca is a Node.js module for character.ai, built for Mass Usage and unlimited user handling. It is inspired by the `node_characterai` module, designed to provide a simplified interface for creating and managing chat threads with CharacterAI. One of its key features is the ability to handle mass usage and support unlimited users seamlessly.
 
 ## Installation
 
