@@ -1,6 +1,6 @@
 {
   "name": "fatin_ca",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Mass CharacterAI Chat Module",
   "main": "index.js",
   "scripts": {

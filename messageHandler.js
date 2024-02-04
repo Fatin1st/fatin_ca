@@ -53,10 +53,18 @@ createGuestAccount().then(() => {
         message.userMessage,
         message.characterId
       );
-      parentPort.postMessage({ userId, response: response.text });
+      parentPort.postMessage({
+        userId,
+        response: response.text,
+        messageId: message.messageId,
+      });
     } catch (error) {
       console.error(error);
-      parentPort.postMessage({ userId, error: "Internal Server Error" });
+      parentPort.postMessage({
+        userId,
+        error: "Internal Server Error",
+        messageId: message.messageId,
+      });
     }
   });
 });

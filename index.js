@@ -24,9 +24,10 @@ function createNewChat(userId, callback) {
   });
 
   threadMap.set(userId, worker);
-  worker.removeAllListeners("message");
   callback(threadName);
 }
+
+const messageQueue = new Map();
 
 function startOrContinueChat(userId, userMessage, characterId, callback) {
   if (!userId || !userMessage || !characterId) {
@@ -41,12 +42,22 @@ function startOrContinueChat(userId, userMessage, characterId, callback) {
     throw new Error("Thread not found");
   }
 
-  existingThread.postMessage({ userMessage, characterId });
+  // Enqueue the message and callback
+  const messageId = uuid.v4();
+  messageQueue.set(messageId, callback);
+  existingThread.postMessage({ userMessage, characterId, messageId });
 
-  existingThread.on("message", (response) => {
-    callback(response);
-    existingThread.removeAllListeners("message");
-  });
+  // Set up the message listener if it hasn't been set up yet
+  if (!existingThread.listenerSetUp) {
+    existingThread.on("message", (response) => {
+      const queuedCallback = messageQueue.get(response.messageId);
+      if (queuedCallback) {
+        queuedCallback(response);
+        messageQueue.delete(response.messageId);
+      }
+    });
+    existingThread.listenerSetUp = true;
+  }
 }
 
 function deleteChat(userId) {
@@ -56,7 +67,7 @@ function deleteChat(userId) {
     existingThread.terminate();
     threadMap.delete(userId);
     console.log(
-      `${red}${bright}[fatin_ca] Deleted chat for USERID: ${userId}${reset}`
+      `${red}${bright}[fatin_ca] Deleted chat for USER-ID: ${userId}${reset}`
     );
   }
 }

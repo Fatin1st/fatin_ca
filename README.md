@@ -19,19 +19,30 @@ Here's an example code snippet demonstrating how to use the fatin_ca module:
 ```javascript
 const fatin = require("fatin_ca");
 
-const userMessage = "Hello";
-const userId = "2009-09-27";
-const characterId = "s3kGJkdd9nW1-I0HVrH0r3zY3N6TzgPU9jjhhdshdb";
+const userId1 = "2009-09-27";
+const userId2 = "2009-09-28";
+const characterId = "8_1NyR8w1dOXmI1uWaieQcd147hecbdIK7CeEAIrdJw";
 
-// Create a new chat thread
-fatin.createNewChat(userId, (threadName) => {
-  console.log("Thread Name: ", threadName);
+// Create new chat for User 1
+fatin.createNewChat(userId1, (threadName) => {
+  console.log(`Thread Name for User 1: ${threadName}`);
 });
 
-// Start or continue the chat thread and delete when got response
-fatin.startOrContinueChat(userId, userMessage, characterId, (response) => {
-  console.log("Response: ", response);
-  fatin.deleteChat(userId);
+// Create new chat for User 1
+fatin.createNewChat(userId2, (threadName) => {
+  console.log(`Thread Name for User 2: ${threadName}`);
+});
+
+// Start or continue chat for User 1
+fatin.startOrContinueChat(userId1, "Hello from User 1", characterId, (response) => {
+  console.log(`Response for User 1: ${JSON.stringify(response)}`);
+  fatin.deleteChat(userId1); // Delete chat for User 1
+});
+
+// Start or continue chat for User 2
+fatin.startOrContinueChat(userId2, "Hello from User 2", characterId, (response) => {
+  console.log(`Response for User 2: ${JSON.stringify(response)}`);
+  fatin.deleteChat(userId2); // Delete chat for User 2
 });
 ```
 
@@ -66,9 +77,17 @@ Deletes chat thread for the specified user.
 
 - `userId` (String): Unique identifier for the user.
 
+## `Response`
+
+Response is built in JSON with 3 parts
+
+- `userId` (String): Unique identifier for the user.
+- `response` (String): Actual response of the AI.
+- `messageId` (String): Unique identifier for the message.
+
 ## Note
 
-This module is designed for mass usage and can efficiently handle unlimited users. It simplifies the interaction with CharacterAI for creating and managing chat threads in Node.js applications.
+This module is designed for mass usage and can efficiently handle unlimited users. It uses Node.js workers to create separate environment for each user. Therefore, the performance of the module depends on the cores of the server.
 
 ## 🚀 About Me
 
