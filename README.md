@@ -33,14 +33,25 @@ fatin.createNewChat(userId2, (threadName) => {
   console.log(`Thread Name for User 2: ${threadName}`);
 });
 
-// Start or continue chat for User 1
+// Start chat for User 1
 fatin.startOrContinueChat(userId1, "Hello from User 1", characterId, (response) => {
+  console.log(`Response for User 1: ${JSON.stringify(response)}`);
+});
+
+// Start chat for User 2
+fatin.startOrContinueChat(userId2, "Hello from User 2", characterId, (response) => {
+  console.log(`Response for User 2: ${JSON.stringify(response)}`);
+});
+
+
+// Continue chat for User 1
+fatin.startOrContinueChat(userId1, "How are you?", characterId, (response) => {
   console.log(`Response for User 1: ${JSON.stringify(response)}`);
   fatin.deleteChat(userId1); // Delete chat for User 1
 });
 
-// Start or continue chat for User 2
-fatin.startOrContinueChat(userId2, "Hello from User 2", characterId, (response) => {
+// Continue chat for User 2
+fatin.startOrContinueChat(userId2, "Who are you?", characterId, (response) => {
   console.log(`Response for User 2: ${JSON.stringify(response)}`);
   fatin.deleteChat(userId2); // Delete chat for User 2
 });
