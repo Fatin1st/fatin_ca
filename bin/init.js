@@ -16,12 +16,17 @@ console.log(
 console.log(
   `${magenta}${bright}[fatin_ca] Guide: ${cyan}https://github.com/Fatin1st/fatin_ca${reset}`
 );
+
 console.log(
-  `${magenta}${bright}[fatin_ca] Running ${yellow}npx puppeteer browsers install chrome${cyan}...${reset}\n`
+  `${magenta}${bright}[fatin_ca] Running ${yellow}npm install fatin_ca && npx puppeteer browsers install chrome${cyan}...${reset}\n`
 );
 
 try {
-  execSync("npx puppeteer browsers install chrome", { stdio: "inherit" });
+  execSync("npm install fatin_ca && npx puppeteer browsers install chrome", {
+    stdio: "inherit",
+    shell: true,
+  });
+
   console.log(
     `${green}${bright}\n[fatin_ca] Initialization completed.${reset}`
   );
